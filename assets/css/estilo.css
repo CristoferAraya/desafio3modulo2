@@ -1,0 +1,142 @@
+body{
+    margin: 0px;
+}
+
+
+.nav{
+    background-color: black;
+    color: white;
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.filtros{
+    background-color: #f1f1f1;
+    padding: 10px;
+    grid-area: filtros;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filtros select{
+    width: 200px;
+}
+
+.main{
+    padding: 10px;
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: auto;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.card img{
+    width: 100%;
+}
+
+.card button{
+    width: 20%;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.paginador{
+    background-color: #f1f1f1;
+    padding: 10px;
+    grid-area: paginador;
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+
+.paginador button{
+    background-color: green;
+    border: none;
+    color:white;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.footer{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5pxs;
+}
+
+.menu{
+    display: none;
+}
+
+
+.grid{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: 
+    "nav" 
+    "filtros" 
+    "main"
+    "paginador" 
+    "footer"
+}
+
+@media (min-width:576px){
+    .grid{
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: 
+        "nav filtros" 
+        "nav main"
+        "footer paginador" 
+        
+    }
+    
+    .main{
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        
+    }
+    .menu{
+        display: block;
+    }
+
+    .fa-bars{
+        display: none;
+    }
+
+    .nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .footer{
+        background-color: blue;
+        color:white
+    }
+
+}
+
